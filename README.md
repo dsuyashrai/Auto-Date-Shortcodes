@@ -1,6 +1,25 @@
 # Description
 
-Add current year by [year], next year by [nextyear], previous year by [previous] shortcodes in anywhere in Wordpress. eg., Post title, content, custom meta titles, excerpt etc. Now you don't have to worry about updating your post title or contents every year, this plugin makes your job a lot easier and in turn also boosts your SEO, without extra work from your side.
+Add current year, next year, previous year shortcodes anywhere in Wordpress. Example: Post title, content, custom meta titles, excerpt etc.
+
+Now you don't have to worry about updating your post title or contents every year, this plugin makes your job a lot easier and in turn also boosts your SEO, without requiring any extra work from your side.
+
+# Example Usage
+
+For writing current year:
+```
+[year]
+```
+
+For writing next year:
+```
+[nextyear]
+```
+
+For writing previous year:
+```
+[previous]
+```
 
 # Installation
 
