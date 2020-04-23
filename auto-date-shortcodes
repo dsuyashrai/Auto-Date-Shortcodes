@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * The plugin bootstrap file
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://insidexpress.com
+ * @since             1.0.0
+ * @package           Auto_Date_Shortcodes
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Auto Date Shortcodes
+ * Plugin URI:        https://insidexpress.com/
+ * Description:       Add Current Year, Next Year or Previous Year anywhere, including title, content etc. using shortcodes.
+ * Version:           1.0.0
+ * Author:            Suyash Rai
+ * Author URI:        https://insidexpress.com
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       auto-date-shortcodes
+ */
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define( 'AUTO_DATE_SHORTCODES_VERSION', '1.0.0' );
+add_shortcode( 'year' , 'ads_current_year' );
+    function ads_current_year() {
+    $year = date("Y");
+    return "$year";
+}
+add_shortcode( 'nextyear' , 'ads_next_year' );
+    function ads_next_year() {
+    $nextyear = date("Y") + 1;
+    return "$nextyear";
+}
+add_shortcode( 'prevyear' , 'ads_prev_year' );
+    function ads_prev_year() {
+    $prevyear = date("Y") - 1;
+    return "$prevyear";
+}
+
+add_filter( 'the_title', 'do_shortcode' );
+add_filter( 'single_post_title', 'do_shortcode' );
+add_filter( 'the_excerpt', 'do_shortcode');
